@@ -33,7 +33,7 @@
 
 
 
-# 📖 Awsome Books With React <a name="about-project"></a>
+# 📖 My first Rails's Blog <a name="about-project"></a>
 
 **My first Rails'blog ** is a project where I practice the basis of ruby on rails including data models, views, controllers. all this while creating a funcional blog app
 
@@ -41,8 +41,7 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>Client</summary>
+<details>  
   <ul>
     <li><a href="https://reactjs.org/">Rails</a></li>
   </ul>
@@ -137,8 +136,6 @@ I recomend Render since is easy to use
 
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
 
 👤 **Mariano Benjamin**
 
