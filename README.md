@@ -45,11 +45,11 @@
   <ul>
     <li><a href="https://reactjs.org/">Rails</a></li>
   </ul>
-  <summary>Back end</summary>
+  
   <ul>
     <li><a href="https://reactjs.org/">Ruby</a></li>
   </ul>
-  <summary>Database</summary>
+  
   <ul>
     <li><a href="https://reactjs.org/">Progresql</a></li>
   </ul>
@@ -66,16 +66,6 @@
 - **[Use postgresql]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
-
-Coming soon... -->
-<!-- - [Live Demo Link](https://google.com) -->
-
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
