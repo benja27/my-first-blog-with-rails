@@ -35,7 +35,7 @@
 
 # 📖 Awsome Books With React <a name="about-project"></a>
 
-**Awsome Books With React** is a... Describe your project in 1 or 2 sentences.
+**My first Rails'blog ** is a project where I practice the basis of ruby on rails including data models, views, controllers. all this while creating a funcional blog app
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -44,7 +44,15 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://reactjs.org/">Rails</a></li>
+  </ul>
+  <summary>Back end</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">Ruby</a></li>
+  </ul>
+  <summary>Database</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">Progresql</a></li>
   </ul>
 </details>
 
@@ -54,20 +62,20 @@
 
 <!-- > Describe between 1-3 key features of the application. -->
 
-- **[Use Create React APP]**
-- **[Use React Routes]**
-- **[Use React Redux]**
+- **[Use Ruby]**
+- **[Use Rails]**
+- **[Use postgresql]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-## 🚀 Live Demo <a name="live-demo"></a>
+<!-- ## 🚀 Live Demo <a name="live-demo"></a>
 
-Coming soon...
+Coming soon... -->
 <!-- - [Live Demo Link](https://google.com) -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
@@ -81,49 +89,36 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need :
 Install this:
-Node js
+Ruby
+Rails
+Postgresql
 Visual Studio Code
 Git
-
 
 
 ### Setup
 
 Clone this repository to your desired folder:
 and a open a new terminal on your visual studio code
-
-
   
 
 ### Install
 
 Install this project with:
-npm install
-
-
-
+bundle install
 
 
 ### Usage
 
 To run the project, execute the following command:
-npm run start
-
-
-
-
-
+rails db:create
+rails db:migrate
+rails s
 
 
 ### Run tests
 
-To run tests, run the following command:
-npm run test
-
-
-
-
-
+they are not implementing yet
 
 
 ### Deployment
@@ -156,9 +151,9 @@ I recomend Render since is easy to use
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Improve user interface]**
-- [ ] **[Improve Js code]**
-- [ ] **[Implement conexion to a database]**
+- [ ] **[ Implement more models ]**
+- [ ] **[ Add front end ]**
+- [ ] **[ Having a functional app ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
