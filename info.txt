@@ -1,0 +1,8 @@
+rails new . -d postgresql 
+
+add 
+  host localhost 
+  user postgres 
+  password 12345
+  port 8000 
+
