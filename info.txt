@@ -9,9 +9,24 @@ add
 ------- create models 
 
 rails generate model (name_capitalized_singular) (columns: datatype)
+
 rails generate model User name:string picture:string author: references 
 
 when using references go the migration file and change the default refence 
+
+
+rails generate model Post title:string text:text author:references comments_counter:integer likes_counter:integer
+rails generate migration AddUserRefToPost 
+
+rails generate  AddPostRefToLikes posts:references
+add_reference :posts, :author, references: :users, null: false, foreign_key: {to_table: :users}
+class AddUserRefToPosts < ActiveRecord::Migration[7.0]
+  def change
+    add_reference :posts, :author, references: :users, null: false, foreign_key: {to_table: :users}
+  end
+end
+
+
 
 from: 
 t.references :author, null: false, foreign_key: true
