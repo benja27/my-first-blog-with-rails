@@ -5,7 +5,6 @@ class Post < ApplicationRecord
 
   after_create :increment_user_posts_count
 
-
   def increment_user_posts_count
     author.increment!(:posts_counter)
   end
