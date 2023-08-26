@@ -9,4 +9,5 @@ class Like < ApplicationRecord
   def increment_likes_counter
     post.increment!(:likes_counter)
   end
+  
 end

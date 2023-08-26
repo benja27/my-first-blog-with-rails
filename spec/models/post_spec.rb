@@ -8,7 +8,7 @@ RSpec.describe Post, type: :model do
     first_user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     
     first_post = Post.new(author: first_user, title: 'Hello', text: 'This is my first post')
-
+    
     expect(first_post).to be_valid
   end
 

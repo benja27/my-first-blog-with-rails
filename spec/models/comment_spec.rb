@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  it "is valid with a name and email" do
-    # user = User.new(name: "Example User", email: "user@example.com")
+  it "is valid comment with a user and a post" do
+    
     first_user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
 
     first_post = Post.new(author: first_user, title: 'Hello', text: 'This is my first post')
