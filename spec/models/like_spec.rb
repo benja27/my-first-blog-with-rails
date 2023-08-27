@@ -14,8 +14,6 @@ RSpec.describe Like, type: :model do
     expect(like).to be_valid
   end
 
-
-
   # test for increment likes counter
   it 'should increment the likes_counter of the associated post' do
     user = User.create(name: 'Example User')

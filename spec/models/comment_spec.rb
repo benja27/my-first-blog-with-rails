@@ -15,7 +15,6 @@ RSpec.describe Comment, type: :model do
     expect(comment).to be_valid
   end
 
-
   # increment comments counter test
 
   it 'should increment the comments_counter of the associated post' do
