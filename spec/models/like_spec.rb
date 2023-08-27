@@ -21,16 +21,11 @@ RSpec.describe Like, type: :model do
     user = User.create(name: 'Example User')
     post = Post.create(author: user, title: 'Test Post', text: 'This is a test post')
 
-    like = Like.create(author: user, post: post)
+    like = Like.create(author: user, post:)
 
-    expect {
+    expect do
       like.increment_likes_counter
       post.reload
-    }.to change(post, :likes_counter).by(1)
+    end.to change(post, :likes_counter).by(1)
   end
-
-
-
-
-
 end

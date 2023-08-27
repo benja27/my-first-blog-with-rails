@@ -36,17 +36,15 @@ RSpec.describe Post, type: :model do
 end
 
 RSpec.describe Post, type: :model do
-
   describe '#recent_comments' do
-    # 
     it 'should return the 5 most recent comments' do
-      user = User.create(name: 'Example User' )
+      user = User.create(name: 'Example User')
       post = Post.create(author: user, title: 'Test Post', text: 'This is a test post')
-      
+
       comments = []
-      
+
       6.times do |i|
-        comments << Comment.create(author: user, post: post, text: "Comment #{i + 1}")
+        comments << Comment.create(author: user, post:, text: "Comment #{i + 1}")
       end
 
       recent_comments = post.recent_comments
@@ -59,13 +57,13 @@ RSpec.describe Post, type: :model do
 
   describe '#increment_user_posts_count' do
     it 'should increment the posts_counter of the associated user' do
-      user = User.create(name: 'Example User' )
+      user = User.create(name: 'Example User')
       post = Post.create(author: user, title: 'Test Post', text: 'This is a test post')
 
-      expect {
+      expect do
         post.increment_user_posts_count
         user.reload
-      }.to change(user, :posts_counter).by(1)
+      end.to change(user, :posts_counter).by(1)
     end
   end
 end

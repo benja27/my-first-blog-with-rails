@@ -28,7 +28,7 @@ RSpec.describe User, type: :model do
   it 'returns the most recent posts' do
     user = User.new(name: 'John Doe', posts_counter: 0)
     user.save
-    
+
     post1 = Post.new(title: 'My Post Title', text: 'This is the content of the post.', comments_counter: 0,
                      likes_counter: 0, author: user)
     post1.save
@@ -41,10 +41,4 @@ RSpec.describe User, type: :model do
 
     expect(user.recents_posts).to eq([post3, post2, post1])
   end
-
-
-
-
-
-  
 end

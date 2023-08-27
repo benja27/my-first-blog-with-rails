@@ -22,20 +22,11 @@ RSpec.describe Comment, type: :model do
     user = User.create(name: 'Benja')
     post = Post.create(author: user, title: 'Test Post', text: 'This is a test post')
 
-    comment = Comment.create(author: user, post: post, text: 'Test comment')
+    comment = Comment.create(author: user, post:, text: 'Test comment')
 
-    expect {
+    expect do
       comment.increment_comments_counter
       post.reload
-    }.to change(post, :comments_counter).by(1)
+    end.to change(post, :comments_counter).by(1)
   end
-
-
-
-
-
-
-
-
-
 end
