@@ -13,4 +13,24 @@ RSpec.describe Like, type: :model do
     like = Like.new(author: first_user, post: first_post)
     expect(like).to be_valid
   end
+
+
+
+  # test for increment likes counter
+  it 'should increment the likes_counter of the associated post' do
+    user = User.create(name: 'Example User')
+    post = Post.create(author: user, title: 'Test Post', text: 'This is a test post')
+
+    like = Like.create(author: user, post: post)
+
+    expect {
+      like.increment_likes_counter
+      post.reload
+    }.to change(post, :likes_counter).by(1)
+  end
+
+
+
+
+
 end

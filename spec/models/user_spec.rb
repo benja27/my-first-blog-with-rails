@@ -24,4 +24,27 @@ RSpec.describe User, type: :model do
     user.posts_counter = 1.5
     expect(user).not_to be_valid
   end
+
+  it 'returns the most recent posts' do
+    user = User.new(name: 'John Doe', posts_counter: 0)
+    user.save
+    
+    post1 = Post.new(title: 'My Post Title', text: 'This is the content of the post.', comments_counter: 0,
+                     likes_counter: 0, author: user)
+    post1.save
+    post2 = Post.new(title: '#1 My Post Title', text: 'This is the content of the post.', comments_counter: 0,
+                     likes_counter: 0, author: user)
+    post2.save
+    post3 = Post.new(title: '#2 My Post Title', text: 'This is the content of the post.', comments_counter: 0,
+                     likes_counter: 0, author: user)
+    post3.save
+
+    expect(user.recents_posts).to eq([post3, post2, post1])
+  end
+
+
+
+
+
+  
 end

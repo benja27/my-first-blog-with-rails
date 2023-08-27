@@ -34,3 +34,38 @@ RSpec.describe Post, type: :model do
     expect(association.macro).to eq :belongs_to
   end
 end
+
+RSpec.describe Post, type: :model do
+
+  describe '#recent_comments' do
+    # 
+    it 'should return the 5 most recent comments' do
+      user = User.create(name: 'Example User' )
+      post = Post.create(author: user, title: 'Test Post', text: 'This is a test post')
+      
+      comments = []
+      
+      6.times do |i|
+        comments << Comment.create(author: user, post: post, text: "Comment #{i + 1}")
+      end
+
+      recent_comments = post.recent_comments
+
+      # Verificar que solo se obtengan los 5 comentarios más recientes
+      expect(recent_comments.length).to eq(5)
+      expect(recent_comments.first).to eq(comments.last)
+    end
+  end
+
+  describe '#increment_user_posts_count' do
+    it 'should increment the posts_counter of the associated user' do
+      user = User.create(name: 'Example User' )
+      post = Post.create(author: user, title: 'Test Post', text: 'This is a test post')
+
+      expect {
+        post.increment_user_posts_count
+        user.reload
+      }.to change(user, :posts_counter).by(1)
+    end
+  end
+end
