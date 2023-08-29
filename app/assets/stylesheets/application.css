@@ -14,7 +14,7 @@
  *= require_self
  */
 
- .check,
- .check * {
+.check,
+.check * {
   border: 1px solid black;
- }
+}
