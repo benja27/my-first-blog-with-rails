@@ -1,1 +1,25 @@
-<h1>here you can find the post itself</h1>
+<div class="container bg-dark text-white min-vh-100 pt-5 px-4 " >  
+
+  <div class="bg-primary px-3 py-3" >
+    <div class="d-flex align-items-center justify-content-between" >
+      <h2>Post #<%=@post.id%> by <%=@user.name%>  </h2>
+      <h6>Comments: <%=@post.comments_counter%> Likes: <%=@post.likes_counter%> </h6>
+    </div>
+    <div class="pt-3" >
+      <p>
+        <%=@post.text%>
+      </p>    
+    </div>    
+
+        
+
+  </div>
+
+  <div class="bg-secondary pt-4 px-3" >
+      <%@post.all_comments.each do |comment|%>        
+        <h6  ><%=@user.name%>: </h6>
+        <h6 class="pb-3" ><%=comment.text%></h6> 
+      <%end%>
+    </div>
+
+</div>

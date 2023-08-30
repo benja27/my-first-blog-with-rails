@@ -1,1 +1,30 @@
-<h1>here you can see the info of the user <%=@user.id%> </h1>
+<div class="bg-dark min-vh-100 text-white" >
+  <div class="container px-2 py-5">
+  
+  <%= render 'user' %>
+
+  <div class="bg-secondary px-4 py-3 mb-3" >
+    <h2>Bio</h2>
+    <p> <%=@user.bio%> </p>
+  </div>
+
+  
+  <% @user.recents_posts.each do |post| %>
+    <div class="bg-secondary px-4 py-2" >
+      <h2 class="mb-4" >Post #<%=post.id%> </h2>
+      <p> <%=post.text%>   </p>
+      <p class="text-end m-0" > Comments: <%=post.comments_counter%> Likes: <%=post.likes_counter%> </p>
+    </div>
+  <%end %>
+
+  <div class="text-center pt-4"  >
+      <a href="/users/<%=@user.id%>/posts">
+        <button type="button" class="btn btn-primary">See all posts</button>      
+      </a>
+  </div>
+
+  
+
+</div>
+
+</div>
