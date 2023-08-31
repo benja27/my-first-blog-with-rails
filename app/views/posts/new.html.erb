@@ -1,0 +1,13 @@
+<%= form_with(model: [@user, @post], url: user_posts_path(@user), class: 'bg-primary d-flex flex-column pt-5'  ) do |f| %>
+  
+    <%= f.hidden_field :user_id %>
+
+  <%= f.label :title, class: "text-white h2" %>
+  <%= f.text_field :title %>
+
+  <%= f.label :text, class: "text-white h2" %>
+  <%= f.text_area :text %>
+
+  <%= f.submit "Create Post" %>
+
+<% end %>
