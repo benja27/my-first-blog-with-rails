@@ -1,31 +1,41 @@
-<div class="bg-dark min-vh-100 text-white container pt-5" style="max-width:500px" >
-  
-    <%= render 'users/user',  user: @user %>
-  
-  <% @user.recents_posts.each do |post| %>    
+<div class="bg-dark min-vh-100 text-white container pt-5" style="">
+
+  <%= render 'users/user' , user: @user %>
+
+    <% @user.all_posts.each do |post| %>
 
 
-    <div class="bg-secondary px-3 pt-3 pb-2 mb-2" >
+      <div class="bg-secondary px-3 pt-3 pb-2 mb-2">
 
-      <div class="bg-secondary" > 
-        <a class="text-white" href="posts/<%=post.id%>"> <h2>Post #<%=post.id%> </h2> </a>        
-        <h5 class="pt-2" ><%=post.text%></h3>      
-        <h6 class="text-end pe-4" >Comments: <%=post.comments_counter%> Likes: <%=post.likes_counter%> </h6>
+        <div class="bg-secondary">
+          <a class="text-white" href="posts/<%=post.id%>">
+            <h2>Post #<%=post.id%>
+            </h2>
+          </a>
+          <h5 class="pt-2">
+            <%=post.text%>
+              </h3>
+              <h6 class="text-end pe-4">Comments: <%=post.comments_counter%>
+                  <button type="button" class="btn btn-primary">Like</button>
+                  <%=post.likes_counter%>
+              </h6>
+        </div>
+
+        <div class="bg-secondary pt-3">
+          <%post.recent_comments.each do |comment|%>
+            <h6>
+              <%=@users.find( comment.author_id ).name%>:
+            </h6>
+            <h6>
+              <%=comment.text%>
+            </h6>
+            <%end%>
+        </div>
+
       </div>
 
-      <div class="bg-secondary pt-3">
-        <%post.recent_comments.each do |comment|%>   
-          <h6> <%=@users.find( comment.author_id  ).name%>: </h6>                 
-        <h6> <%=comment.text%> </h6>        
-        <%end%>
-      </div>
 
-    </div>
-    
 
-  
-  <%end%>
+      <%end%>
 
 </div>
-
-
