@@ -1,4 +1,4 @@
-class LikesController < ApplicationController
+class likesController < ApplicationController
   def increment_likes
     @like = Like.find(params[:id])
     @like.increment_likes_counter

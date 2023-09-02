@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
 
-
     @comment.author = @user
     @comment.post = @post
 
