@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: likes
+#
+#  id         :bigint           not null, primary key
+#  author_id  :bigint           not null
+#  post_id    :bigint           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 # spec/models/user_spec.rb
 
 require 'rails_helper'
