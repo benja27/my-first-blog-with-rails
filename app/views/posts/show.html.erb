@@ -11,7 +11,14 @@
       </p>    
     </div>    
 
+        <%= link_to 'Like', increment_likes_user_post_path(@user, @post), method: :post, class: 'btn btn-primary border border-white' %>
+        <%= link_to 'Posts', user_posts_path(@user, @post), method: :post, class: 'btn btn-primary border border-white' %>
         
+        <%= link_to 'Home', users_path, method: :post, class: 'btn btn-primary border border-white' %>
+        
+        <a class="text-white" href="<%=@post.id%>/new_comment">new comment</a>
+
+
 
   </div>
 

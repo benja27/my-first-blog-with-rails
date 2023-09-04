@@ -3,6 +3,8 @@
   
   <%= render 'user' %>
 
+  <h1><%=@current_user.name%>  </h1>
+  
   <div class="bg-secondary px-4 py-3 mb-3" >
     <h2>Bio</h2>
     <p> <%=@user.bio%> </p>
@@ -20,6 +22,10 @@
   <div class="text-center pt-4"  >
       <a href="/users/<%=@user.id%>/posts">
         <button type="button" class="btn btn-primary">See all posts</button>      
+      </a>
+
+      <a href= "<%=@user.id%>/posts/new">
+        <button class="btn btn-primary" type="button">add a new post</button>
       </a>
   </div>
 
