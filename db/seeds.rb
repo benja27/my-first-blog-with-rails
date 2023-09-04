@@ -8,11 +8,11 @@
 
 
 
-5.times do |n|
+10.times do |n|
   User.create(
-    name: "User #{n + 1}",
-    photo: "picture#{n + 1}.jpg",
-    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quaerat eum enim suscipit est repellendus, et natus vel praesentium excepturi quisquam saepe eos impedit ducimus nesciunt exercitationem. Vel, eius praesentium! #{n + 1}"
+    name: "User #{(n) + 1}",
+    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dXNlciUyMGljb24lMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quaerat eum enim suscipit est repellendus, et natus vel praesentium excepturi quisquam saepe eos impedit ducimus nesciunt exercitationem. Vel, eius praesentium! #{(n) + 1}"
   )
 end
 
