@@ -2,13 +2,13 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @users = User.all
-    @post = Post.all
+    @post = @user.posts.includes(:comments, :likes)
   end
 
   def show
     @user = User.find(params[:user_id])
     @users = User.all
-    @post = Post.find(params[:id])
+    @post = Post.includes(:author).find(params[:id])
   end
 
   def new
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
 
-    @post.increment!(:likes_counter)
+    @post.includes(:author).increment!(:likes_counter)
 
     redirect_to user_post_path
   end
