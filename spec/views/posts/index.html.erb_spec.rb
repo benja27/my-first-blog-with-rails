@@ -13,6 +13,7 @@ describe 'Post index page', type: :feature do
     visit user_posts_path(@user)
   end
 
+  # shows the user profile picture
   it 'shows the user profile picture' do
     expect(page).to have_css("img[src='#{@user.photo}']")
   end
