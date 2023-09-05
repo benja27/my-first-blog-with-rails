@@ -6,7 +6,6 @@ RSpec.feature 'User Index Page', type: :feature do
                         posts_counter: 5)
   end
 
-
   scenario 'Creating Users' do
     @user1 = User.create(name: 'Lilly', photo: 'user1.jpg', bio: 'teacher', posts_counter: 1)
     @user2 = User.create(name: 'user2', photo: 'user2.jpg', bio: 'farmer', posts_counter: 2)
@@ -28,7 +27,6 @@ RSpec.feature 'User Index Page', type: :feature do
     # Test: Display number of posts each user has written
     expect(page).to have_content('Number of posts: 5')
   end
-
 
   scenario 'renders the user show page' do
     visit '/'
