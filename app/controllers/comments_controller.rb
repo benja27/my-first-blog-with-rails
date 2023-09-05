@@ -15,8 +15,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       redirect_to user_post_path(@user, @post)
-    else
-      puts 'NO SE PUDO GUARDAR ESTA CHINGADERA'
+    else      
       puts @comment.errors.full_messages
       render 'new'
     end
