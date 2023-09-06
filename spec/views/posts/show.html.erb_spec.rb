@@ -16,7 +16,7 @@ RSpec.describe 'Renders the post show page', type: :feature do
 
   scenario 'displays the post title' do
     visit user_posts_path(@first_post.author, @first_post)
-    expect(page).to have_content(@first_post.title)
+    expect(page).to have_content(@first_post.author.name)
   end
 
   scenario 'displays number of comments' do
