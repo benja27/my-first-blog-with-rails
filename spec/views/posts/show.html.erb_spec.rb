@@ -22,7 +22,7 @@ RSpec.describe 'Renders the post show page', type: :feature do
   # ################################################################*************************************
 
   scenario 'check if you can see who wrote the post' do
-    visit user_post_path(@user, @first_post)                     #final requirement
+    visit user_post_path(@user, @first_post) # final requirement
     expect(page).to have_content(@first_post.author.name)
   end
 

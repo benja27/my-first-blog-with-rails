@@ -28,7 +28,7 @@ RSpec.describe 'Renders users Show Page', type: :feature do
   scenario 'Display user bio' do
     visit user_path(@user.id)
     expect(page).to have_content('Software Engineer')
-  end 
+  end
 
   scenario 'Display users first 3 posts' do
     visit user_path(@user.id)
