@@ -4,7 +4,7 @@ RSpec.describe 'Renders users Show Page', type: :feature do
   before(:each) do
     # Create necessary objects for the tests, such as a user and their posts
     @user = User.create(id: 1, name: 'Marc', photo: 'profile.jpg', bio: 'Software Engineer', posts_counter: 10)
-    @first_post =  Post.create(author: @user, title: 'Hi people', text: 'Lorem ipsum dolor sit amet.')
+    @first_post = Post.create(author: @user, title: 'Hi people', text: 'Lorem ipsum dolor sit amet.')
     Post.create(author: @user, title: 'Good', text: 'Consectetur adipiscing elit.')
     Post.create(author: @user, title: 'Dev', text: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
     @post = Post.create(author: @user, title: 'Hello', text: 'Lol')
@@ -17,7 +17,7 @@ RSpec.describe 'Renders users Show Page', type: :feature do
 
   scenario 'Display user username' do
     visit user_path(@user.id)
-    expect(page).to have_content('Marc')    
+    expect(page).to have_content('Marc')
   end
 
   scenario 'Display number of user posts' do
@@ -30,14 +30,14 @@ RSpec.describe 'Renders users Show Page', type: :feature do
     expect(page).to have_content('Software Engineer')
   end
 
-  #################################################################*************************************
+  # ################################################################*************************************
 
   scenario 'check if you can see who wrote the post' do
-    visit user_post_path(@user, @first_post)                                      ##### please approve it 😌         
+    visit user_post_path(@user, @first_post) ##### please approve it 😌
     expect(page).to have_content(@first_post.author.name)
   end
 
-  #################################################################***************************************
+  # ################################################################***************************************
 
   scenario 'Display users first 3 posts' do
     visit user_path(@user.id)
