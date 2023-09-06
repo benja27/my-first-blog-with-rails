@@ -13,7 +13,7 @@
   
   <% @user.recents_posts.each do |post| %>
     <div class="bg-secondary px-4 py-2" >
-      <h2 class="mb-4" >Post #<%=post.id%> </h2>
+      <h2><%=post.title%>: Post #<%=post.id%></h2>
       <p> <%=post.text%>   </p>
       <p class="text-end m-0" > Comments: <%=post.comments_counter%> Likes: <%=post.likes_counter%> </p>
     </div>
