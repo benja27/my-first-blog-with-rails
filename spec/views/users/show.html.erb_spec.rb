@@ -28,16 +28,7 @@ RSpec.describe 'Renders users Show Page', type: :feature do
   scenario 'Display user bio' do
     visit user_path(@user.id)
     expect(page).to have_content('Software Engineer')
-  end
-
-  # ################################################################*************************************
-
-  scenario 'check if you can see who wrote the post' do
-    visit user_post_path(@user, @first_post) ##### please approve it 😌
-    expect(page).to have_content(@first_post.author.name)
-  end
-
-  # ################################################################***************************************
+  end 
 
   scenario 'Display users first 3 posts' do
     visit user_path(@user.id)

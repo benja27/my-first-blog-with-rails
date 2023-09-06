@@ -19,6 +19,15 @@ RSpec.describe 'Renders the post show page', type: :feature do
     expect(page).to have_content(@first_post.author.name)
   end
 
+  # ################################################################*************************************
+
+  scenario 'check if you can see who wrote the post' do
+    visit user_post_path(@user, @first_post)                     #final requirement
+    expect(page).to have_content(@first_post.author.name)
+  end
+
+  # ################################################################***************************************
+
   scenario 'displays number of comments' do
     visit user_posts_path(@first_post.author, @first_post)
     expect(page).to have_content(/comments: 3/i)
