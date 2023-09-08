@@ -1,4 +1,5 @@
 Rails.application.routes.draw do  
+  devise_for :controllers
   devise_for :users
   get 'comment/new'
   get 'posts/index'
@@ -15,8 +16,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:new, :create]          
     end
   end  
-  get '/users/:user_id/posts/:id/increment_likes', to: 'posts#increment_likes'
-  # get '/users/:user_id/posts/:id/new', to: 'comment#new'
+  get '/users/:user_id/posts/:id/increment_likes', to: 'posts#increment_likes'  
   get '/users/:user_id/posts/:id/new_comment', to: 'comments#new', as: 'new_comment'
 
 end
