@@ -14,10 +14,8 @@ class UsersController < ApplicationController
   def destroy
     # Sign out the user
     sign_out current_user
-  
+
     # Redirect to the home page
     redirect_to root_path
   end
-
-
 end
