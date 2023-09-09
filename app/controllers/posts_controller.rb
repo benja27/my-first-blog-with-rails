@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @users = User.all
     @post = Post.find(params[:id])
 
-    #Create an API endpoint to list all posts for a user. 
+    # Create an API endpoint to list all posts for a user.
     render json: @post
   end
 
