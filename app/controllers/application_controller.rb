@@ -1,7 +1,13 @@
-class ApplicationController < ActionController::Base
-  def current_user
-    @current_user = User.find(1)
+class ApplicationController < ActionController::API
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
-  helper_method :current_user
+  def current_user
+    @current_user ||= User.find(params[:id]) if params[:id].present?
+  end
 end

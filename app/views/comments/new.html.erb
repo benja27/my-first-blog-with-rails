@@ -2,22 +2,11 @@
 <%= form_for [@user, @post, @comment], url: user_post_comments_path(params[:user_id], @post)   do |f| %>
   
   <div class="text-white bg-success text-white text-center" >
-    <h1>New Comment</h1>
-
-      
+    <h1>New Comment</h1>      
 
       <%= f.label :write_your_comment_here %>
       <%= f.text_area :text %>
     
-
-    
-
-    
       <%= f.submit 'Create Comment' %>
-    
-  
-  
-  
-  
   
 <% end %>
