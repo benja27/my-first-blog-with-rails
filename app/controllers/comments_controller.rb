@@ -33,10 +33,6 @@ class CommentsController < ApplicationController
     else
       render json: { error: 'Text cannot be empty' }, status: :unprocessable_entity
     end
-
-
-
-
     # this is for html conection
     #   @user = User.find(params[:user_id])
     #   @post = Post.find(params[:post_id])
