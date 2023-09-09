@@ -1,4 +1,20 @@
 class CommentsController < ApplicationController
+  
+  def index
+    
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    # @comments = Comment.all.where(post_id: @post.id ) 
+    @comments = @post.comments  
+    
+    # render plain: "Hello, this is /comments  #{@comments} "
+    # render plain: "Hello, this is /comments"
+
+    render  @comments
+  end 
+  
+  
+  
   def new
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])

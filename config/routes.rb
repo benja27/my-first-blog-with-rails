@@ -12,13 +12,13 @@ Rails.application.routes.draw do
       member do 
         post 'increment_likes'
       end
-      resources :comments, only: [:new, :create]          
+      resources :comments, only: [:index,:new, :create]          
     end
   end  
   
-  # get '/users/:user_id/posts/:id/increment_likes', to: 'posts#increment_likes'
+  get '/users/:user_id/posts/:id/increment_likes', to: 'posts#increment_likes'
   
-  # get '/users/:user_id/posts/:id/new_comment', to: 'comments#new', as: 'new_comment'
+  get '/users/:user_id/posts/:id/new_comment', to: 'comments#new', as: 'new_comment'
 
   
   root "users#index"
