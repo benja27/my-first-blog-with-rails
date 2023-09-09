@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       member do 
         post 'increment_likes'
       end
-      resources :comments, only: [:new, :create]          
+      resources :comments, only: [:index, :new, :create]          
     end
   end  
   
