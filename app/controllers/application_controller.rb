@@ -6,10 +6,5 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
-
-  def current_user
-    # @current_user = User.find(1)
-  end
-
-  # helper_method :current_user
+  
 end
