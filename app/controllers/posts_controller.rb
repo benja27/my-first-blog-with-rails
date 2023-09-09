@@ -3,12 +3,14 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @users = User.all
     @post = Post.all
+    render json: @post
   end
 
   def show
     @user = User.find(params[:user_id])
     @users = User.all
     @post = Post.find(params[:id])
+    render json: @post
   end
 
   def new
